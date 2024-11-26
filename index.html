@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>HomePage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMG Jewelry - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="fonts/KushanScript.ttf" rel="stylesheet" type="text/css">
 </head>
 <body>
-	
+  <header>
+    <nav>
+      <h1>AMG Jewelry</h1>
+      <ul class="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <img src="images/homepage.jpg" alt="AMG Jewelry Shop" class="hero-image">
+    </section>
+
+    <section id="about-amg" class="about-amg">
+      <h2>About AMG Jewelry</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. AMG Jewelry brings timeless elegance and exceptional craftsmanship together, creating pieces that celebrate life's most precious moments. From delicate necklaces to stunning bracelets, discover our collection designed to inspire and captivate.
+      </p>
+    </section>
+
+    <section id="popular-products">
+      <h2>Popular Products</h2>
+      <div class="product-collage" id="productCollage"></div>
+    </section>
+
+    <section id="popular-categories">
+      <h2>Popular Categories</h2>
+      <div class="category-grid">
+        <a href="products.html#necklaces" class="category">
+          <img src="images/necklaces.png" alt="Necklaces">
+          <span>Necklaces</span>
+        </a>
+        <a href="products.html#earrings" class="category">
+          <img src="images/earrings.png" alt="Earrings">
+          <span>Earrings</span>
+        </a>
+        <a href="products.html#rings" class="category">
+          <img src="images/rings.png" alt="Rings">
+          <span>Rings</span>
+        </a>
+        <a href="products.html#bracelets" class="category">
+          <img src="images/bracelets.png" alt="Bracelets">
+          <span>Bracelets</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 AMG Jewelry. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
