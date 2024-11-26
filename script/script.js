@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const categories = document.querySelectorAll('.category');
   const products = document.querySelectorAll('.product-item');
-	
+
   const handleFadeIn = (elements) => {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -24,8 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => {
       const productCollage = document.getElementById('productCollage');
-      
-      data.products.forEach(product => {
+
+      const popularProducts = data.products
+        .filter(product => product.isPopular)
+        .slice(0, 4);
+
+      popularProducts.forEach(product => {
         const productItem = document.createElement('div');
         productItem.classList.add('product-item');
 
@@ -51,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         productItem.appendChild(productPrice);
         productCollage.appendChild(productItem);
       });
+
       handleFadeIn(document.querySelectorAll('.product-item'));
     })
     .catch(error => console.error('Error loading data:', error));

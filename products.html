@@ -4,30 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMG Jewelry - Products</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles/products.css">
 </head>
 <body>
   <header>
-    <div class="branding">
-      <img src="images/logo.png" alt="AMG Jewelry Logo" class="brand-logo">
-      <h1>AMG Jewelry</h1>
-    </div>
     <nav>
-      <ul>
+      <h1>AMG Jewelry</h1>
+      <ul class="navigation">
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="aboutus.html">About Us</a></li>
       </ul>
     </nav>
   </header>
+
   <main>
-    <section>
-      <h2>Our Products</h2>
-      <input type="text" id="search" placeholder="Search products...">
-      <div class="product-grid">
-      </div>
-    </section>
+    <div class="container">
+      <aside id="filter-sidebar">
+        <h2>Filtre</h2>
+        <div class="filter-option">
+          <label for="category">Categorie</label>
+          <select id="category" class="filter-select">
+            <option value="all">Toate</option>
+            <option value="Necklaces">Coliere</option>
+            <option value="Earrings">Cercei</option>
+            <option value="Rings">Inele</option>
+            <option value="Bracelets">Brățări</option>
+          </select>
+        </div>
+    
+        <div class="filter-option">
+          <label for="price-range">Interval Preț (MDL)</label>
+          <input type="range" id="price-range" class="filter-range" min="0" max="10000" step="50" value="10000">
+          <span id="price-value">10000 MDL</span>
+        </div>
+    
+        <div class="filter-option">
+          <label for="material">Material</label>
+          <select id="material" class="filter-select">
+            <option value="all">Toate</option>
+            <option value="Silver">Argint</option>
+            <option value="Gold">Aur</option>
+            <option value="Platinum">Platină</option>
+          </select>
+        </div>
+    
+        <div class="filter-option">
+          <label for="sort">Sortează după</label>
+          <select id="sort" class="filter-select">
+            <option value="date">Dată</option>
+            <option value="price">Preț</option>
+          </select>
+        </div>
+      </aside>
+    
+      <section id="popular-products">
+        <div class="product-collage" id="productCollage"></div>
+      </section>
+    </div>
   </main>
+
+  <footer>
+    <p>&copy; 2024 AMG Jewelry. All rights reserved.</p>
+  </footer>
+
+  <script src="script/products.js"></script>
 </body>
 </html>

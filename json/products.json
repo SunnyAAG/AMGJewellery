@@ -2,35 +2,58 @@
   "products": [
     {
       "id": "product1",
-      "name": "Elegant Necklace",
-      "price": "1200 MDL",
+      "name": "Colier cu pandantiv ursuleț",
+      "price": "690 MDL",
       "image": "images/necklaces.png",
       "category": "Necklaces",
-      "link": "products.html#product1"
+      "link": "products.html#product1",
+      "material": "Silver",
+      "dateAdded": "2024-01-10",
+      "isPopular": false
     },
     {
       "id": "product2",
-      "name": "Diamond Earrings",
-      "price": "950 MDL",
+      "name": "Cercei hoops placați cu aur",
+      "price": "700 MDL",
       "image": "images/earrings.png",
       "category": "Earrings",
-      "link": "products.html#product2"
+      "link": "products.html#product2",
+      "material": "Gold",
+      "dateAdded": "2024-01-10",
+      "isPopular": true
     },
     {
       "id": "product3",
-      "name": "Gold Ring",
+      "name": "Inel cu piatră naturală",
       "price": "1500 MDL",
       "image": "images/rings.png",
       "category": "Rings",
-      "link": "products.html#product3"
+      "link": "products.html#product3",
+      "material": "Gold",
+      "dateAdded": "2024-01-10",
+      "isPopular": true
     },
     {
       "id": "product4",
-      "name": "Silver Bracelet",
+      "name": "Brățară cu cristale naturale și pandantiv",
       "price": "800 MDL",
       "image": "images/bracelets.png",
       "category": "Bracelets",
-      "link": "products.html#product4"
+      "link": "products.html#product4",
+      "material": "Silver",
+      "dateAdded": "2024-01-10",
+      "isPopular": true
+    },
+    {
+      "id": "product5",
+      "name": "Brățară dublă din argint ,cu pandantiv luna",
+      "price": "300 MDL",
+      "image": "images/brataradublaargint.png",
+      "category": "Bracelets",
+      "link": "products.html#product5",
+      "material": "Silver",
+      "dateAdded": "2024-01-10",
+      "isPopular": true
     }
   ]
 }
