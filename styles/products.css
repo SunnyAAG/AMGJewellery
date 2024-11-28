@@ -182,6 +182,7 @@ h1 {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	/* max-width: 300px; */
 }
 
 .filter-option label {
@@ -201,15 +202,26 @@ h1 {
   background-color: #f9f9f9;
   transition: border-color 0.3s ease;
 }
+#price-range{
+	width: 93%;
+}
 
 .filter-select:focus, .filter-range:focus {
   outline: none;
   border-color: #5c9cff;
 }
+.filter-sidebar{
+	padding: 10px;
+}
 
 #price-value {
   font-weight: bold;
   margin-top: 5px;
+}
+
+.container{
+	display: grid;
+	grid-template-columns: repeat(2, auto);
 }
 
 footer {
@@ -223,4 +235,7 @@ footer {
   .category-grid {
     grid-template-columns: 1fr;
   }
+	.container{
+		grid-template-columns: repeat(1, auto);
+	}
 }
