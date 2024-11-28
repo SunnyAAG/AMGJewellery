@@ -21,42 +21,42 @@
   <main>
     <div class="container">
       <aside id="filter-sidebar" class="filter-sidebar">
-        <h2>Filtre</h2>
-        <div class="filter-option">
-          <label for="category" class="category"><span class="category-text">Categorie</span></label>
-          <select id="category" class="filter-select">
-            <option value="all">Toate</option>
-            <option value="Necklaces">Coliere</option>
-            <option value="Earrings">Cercei</option>
-            <option value="Rings">Inele</option>
-            <option value="Bracelets">Brățări</option>
-          </select>
-        </div>
-    
-        <div class="filter-option">
-          <label for="price-range">Interval Preț (MDL)</label>
-          <input type="range" id="price-range" class="filter-range" min="0" max="10000" step="50" value="10000">
-          <span id="price-value">10000 MDL</span>
-        </div>
-    
-        <div class="filter-option">
-          <label for="material">Materiale</label>
-          <select id="material" class="filter-select">
-            <option value="all">Toate</option>
-            <option value="Silver">Argint</option>
-            <option value="Gold">Aur</option>
-            <option value="Platinum">Platină</option>
-          </select>
-        </div>
-    
-        <div class="filter-option">
-          <label for="sort">Sortează după</label>
-          <select id="sort" class="filter-select">
-            <option value="date">Dată</option>
-            <option value="price">Preț</option>
-          </select>
-        </div>
-      </aside>
+				<button id="filter-toggle" class="filter-toggle">Show Filters</button>
+				<div id="filter-options" class="filter-options">
+					<h2>Filtre</h2>
+					<div class="filter-option">
+						<label for="category" class="category"><span class="category-text">Categorie</span></label>
+						<select id="category" class="filter-select">
+							<option value="all">Toate</option>
+							<option value="Necklaces">Coliere</option>
+							<option value="Earrings">Cercei</option>
+							<option value="Rings">Inele</option>
+							<option value="Bracelets">Brățări</option>
+						</select>
+					</div>
+					<div class="filter-option">
+						<label for="price-range">Interval Preț (MDL)</label>
+						<input type="range" id="price-range" class="filter-range" min="0" max="10000" step="50" value="10000">
+						<span id="price-value">10000 MDL</span>
+					</div>
+					<div class="filter-option">
+						<label for="material">Materiale</label>
+						<select id="material" class="filter-select">
+							<option value="all">Toate</option>
+							<option value="Silver">Argint</option>
+							<option value="Gold">Aur</option>
+							<option value="Platinum">Platină</option>
+						</select>
+					</div>
+					<div class="filter-option">
+						<label for="sort">Sortează după</label>
+						<select id="sort" class="filter-select">
+							<option value="date">Dată</option>
+							<option value="price">Preț</option>
+						</select>
+					</div>
+				</div>
+			</aside>			
     
       <section id="popular-products">
         <div class="product-collage" id="productCollage"></div>

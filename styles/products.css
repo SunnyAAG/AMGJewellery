@@ -239,3 +239,55 @@ footer {
 		grid-template-columns: repeat(1, auto);
 	}
 }
+.filter-toggle {
+  display: none;
+  background-color: #5c9cff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+  text-align: center;
+}
+
+.filter-options {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .filter-options {
+    display: none;
+  }
+
+  .filter-sidebar {
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .filter-toggle {
+    display: block;
+  }
+
+  .filter-options.show {
+    display: block;
+  }
+}
+
+
+.filter-options {
+  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.filter-options.show {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+}
