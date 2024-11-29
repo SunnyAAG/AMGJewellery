@@ -99,13 +99,26 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById('sort').addEventListener('change', filterProducts);
 });
 document.addEventListener("DOMContentLoaded", () => {
-	const filterToggle = document.getElementById("filter-toggle");
-	const filterOptions = document.getElementById("filter-options");
+  const filterToggle = document.getElementById("filter-toggle");
+  const filterOptions = document.getElementById("filter-options");
 
-	filterToggle.addEventListener("click", () => {
-		filterOptions.classList.toggle("show");
-		filterToggle.textContent = filterOptions.classList.contains("show")
-			? "Hide Filters"
-			: "Show Filters";
-	});
+  const updateFilterVisibility = () => {
+    if (window.innerWidth >= 768) {
+      filterOptions.classList.add("show");
+      filterToggle.style.display = "none";
+    } else {
+      filterOptions.classList.remove("show");
+      filterToggle.style.display = "block";
+    }
+  };
+
+  window.addEventListener("resize", updateFilterVisibility);
+  updateFilterVisibility();
+
+  filterToggle.addEventListener("click", () => {
+    filterOptions.classList.toggle("show");
+    filterToggle.textContent = filterOptions.classList.contains("show")
+      ? "Hide Filters"
+      : "Show Filters";
+  });
 });

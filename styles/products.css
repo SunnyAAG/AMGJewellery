@@ -276,6 +276,11 @@ footer {
     display: block;
   }
 }
+@media (min-width: 768px) {
+  .filter-options {
+    display: block;
+  }
+}
 
 
 .filter-options {
