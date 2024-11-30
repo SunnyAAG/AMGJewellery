@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMG Jewelry - Products</title>
+  <title>AMG Jewelry - Producte</title>
   <link rel="stylesheet" href="styles/products.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
       <h1>AMG Jewelry</h1>
       <ul class="navigation">
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Producte</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="aboutus.html">About Us</a></li>
       </ul>
     </nav>
@@ -21,43 +21,57 @@
   <main>
     <div class="container">
       <aside id="filter-sidebar" class="filter-sidebar">
-				<button id="filter-toggle" class="filter-toggle">Show Filters</button>
-				<div id="filter-options" class="filter-options">
-					<h2>Filtre</h2>
-					<div class="filter-option">
-						<label for="category" class="category"><span class="category-text">Categorie</span></label>
-						<select id="category" class="filter-select">
-							<option value="all">Toate</option>
-							<option value="Necklaces">Coliere</option>
-							<option value="Earrings">Cercei</option>
-							<option value="Rings">Inele</option>
-							<option value="Bracelets">Brățări</option>
-						</select>
-					</div>
-					<div class="filter-option">
-						<label for="price-range">Interval Preț (MDL)</label>
-						<input type="range" id="price-range" class="filter-range" min="0" max="10000" step="50" value="10000">
-						<span id="price-value">10000 MDL</span>
-					</div>
-					<div class="filter-option">
-						<label for="material">Materiale</label>
-						<select id="material" class="filter-select">
-							<option value="all">Toate</option>
-							<option value="Silver">Argint</option>
-							<option value="Gold">Aur</option>
-							<option value="Platinum">Platină</option>
-						</select>
-					</div>
-					<div class="filter-option">
-						<label for="sort">Sortează după</label>
-						<select id="sort" class="filter-select">
-							<option value="date">Dată</option>
-							<option value="price">Preț</option>
-						</select>
-					</div>
-				</div>
-			</aside>			
-    
+        <button id="filter-toggle" class="filter-toggle">Show Filters</button>
+        <div id="filter-options" class="filter-options">
+          <h2>Filtre</h2>
+
+          <!-- Category filter -->
+          <div class="filter-option">
+            <label for="category" class="category">Categorie</label>
+            <div id="category-list" class="filter-list">
+              <div class="filter-item">
+                <input type="checkbox" id="category-all" class="filter-checkbox" data-value="all">
+                <label for="category-all" class="circle-checkbox">Toate</label>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="category-necklaces" class="filter-checkbox" data-value="Necklaces">
+                <label for="category-necklaces" class="circle-checkbox">Coliere</label>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="category-earrings" class="filter-checkbox" data-value="Earrings">
+                <label for="category-earrings" class="circle-checkbox">Cercei</label>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="category-rings" class="filter-checkbox" data-value="Rings">
+                <label for="category-rings" class="circle-checkbox">Inele</label>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="category-bracelets" class="filter-checkbox" data-value="Bracelets">
+                <label for="category-bracelets" class="circle-checkbox">Brățări</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Range -->
+          <div class="filter-option">
+            <label for="price-range" class="category">Price Range</label>
+            <input type="range" id="price-range" class="filter-range" min="0" max="3000" value="3000" step="10">
+            <p>Price: <span id="price-value">MDL0 - MDL3000</span></p>
+          </div>
+
+          <!-- Sorting -->
+          <div class="filter-option">
+            <label for="sort-by" class="category">Sort By</label>
+            <select id="sort-by" class="filter-select">
+              <option value="default">Default</option>
+              <option value="price-low-to-high">Price: Low to High</option>
+              <option value="price-high-to-low">Price: High to Low</option>
+              <option value="popularity">Popularity</option>
+            </select>
+          </div>
+        </div>
+      </aside>
+      
       <section id="popular-products">
         <div class="product-collage" id="productCollage"></div>
       </section>
