@@ -141,9 +141,11 @@ document.addEventListener("DOMContentLoaded", function () {
   updateFilterVisibility();
 
   filterToggle.addEventListener("click", () => {
-    filterOptions.classList.toggle("show");
-    filterToggle.textContent = filterOptions.classList.contains("show")
-      ? "Hide Filters"
-      : "Show Filters";
+    if (window.innerWidth < 768) {
+      filterOptions.classList.toggle("show");
+      filterToggle.textContent = filterOptions.classList.contains("show")
+        ? "Hide Filters"
+        : "Show Filters";
+    }
   });
 });
