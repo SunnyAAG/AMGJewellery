@@ -10,6 +10,13 @@ body {
   color: #333;
 }
 
+#brand-name {
+  font-family: 'KaushanScript', cursive;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
 h1, h2 {
   text-align: center;
 }
