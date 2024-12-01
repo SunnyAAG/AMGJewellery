@@ -242,6 +242,34 @@ footer {
   .container {
     grid-template-columns: repeat(1, auto);
   }
+
+  .filter-options {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .filter-options.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .filter-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-options {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .filter-toggle {
+    display: none;
+  }
 }
 
 .filter-toggle {
@@ -255,40 +283,6 @@ footer {
   cursor: pointer;
   width: 25%;
   text-align: center;
-}
-
-.filter-options {
-  display: block;
-  max-width: 500px;
-}
-
-@media (max-width: 768px) {
-  .filter-options {
-    display: none;
-    max-width: 400px;
-  }
-
-  .filter-sidebar {
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #fff;
-  }
-
-  .filter-toggle {
-    display: block;
-  }
-
-  .filter-options.show {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) {
-  .filter-options {
-    display: block;
-    width: 300px;
-  }
 }
 
 .filter-options {
