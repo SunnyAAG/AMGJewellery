@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productName.textContent = product.name;
 
       const productPrice = document.createElement("p");
-      productPrice.textContent = `${product.price} MDL`;
+      productPrice.textContent = `${product.price} `;
       productPrice.classList.add("product-price");
 
       productLink.appendChild(productImage);
