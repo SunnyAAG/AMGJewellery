@@ -123,7 +123,6 @@ h1 {
   margin: 0 auto;
 }
 
-
 .product-item {
   position: relative;
   opacity: 0;
@@ -236,9 +235,9 @@ footer {
   .category-grid {
     grid-template-columns: 1fr;
   }
-	.product-collage{
-		grid-template-columns: repeat(2, 1fr);
-	}
+  .product-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .container {
     grid-template-columns: repeat(1, auto);
@@ -260,13 +259,13 @@ footer {
 
 .filter-options {
   display: block;
-	max-width: 500px;
+  max-width: 500px;
 }
 
 @media (max-width: 768px) {
   .filter-options {
     display: none;
-		max-width: 400px;
+    max-width: 400px;
   }
 
   .filter-sidebar {
@@ -288,7 +287,7 @@ footer {
 @media (min-width: 768px) {
   .filter-options {
     display: block;
-		width: 300px;
+    width: 300px;
   }
 }
 

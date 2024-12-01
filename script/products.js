@@ -11,61 +11,125 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error loading data:", error));
 
   const displayProducts = (productsList) => {
+    if (!productCollage) {
+      console.error(
+        "Error: The product collage element is null or undefined."
+      );
+      return;
+    }
+
+    const productItems = productsList.map(
+      (product) => {
+        if (!product || !product.image || !product.link || !product.name || !product.price) {
+          console.error(
+            "Error: A product in the products list has a missing property."
+          );
+          return null;
+        }
+
+        const productItem = document.createElement("div");
+        productItem.classList.add("product-item");
+
+        const productImage = document.createElement("img");
+        productImage.src = product.image;
+        productImage.alt = product.name;
+
+        const productLink = document.createElement("a");
+        productLink.href = product.link;
+        productLink.classList.add("product-link");
+
+        const productName = document.createElement("p");
+        productName.textContent = product.name;
+
+        const productPrice = document.createElement("p");
+        productPrice.textContent = `${product.price} `;
+        productPrice.classList.add("product-price");
+
+        productLink.appendChild(productImage);
+        productItem.appendChild(productLink);
+        productItem.appendChild(productName);
+        productItem.appendChild(productPrice);
+
+        return productItem;
+      }
+    ).filter((productItem) => !!productItem);
+
     productCollage.innerHTML = "";
-    productsList.forEach((product) => {
-      const productItem = document.createElement("div");
-      productItem.classList.add("product-item");
-
-      const productImage = document.createElement("img");
-      productImage.src = product.image;
-      productImage.alt = product.name;
-
-      const productLink = document.createElement("a");
-      productLink.href = product.link;
-      productLink.classList.add("product-link");
-
-      const productName = document.createElement("p");
-      productName.textContent = product.name;
-
-      const productPrice = document.createElement("p");
-      productPrice.textContent = `${product.price} `;
-      productPrice.classList.add("product-price");
-
-      productLink.appendChild(productImage);
-      productItem.appendChild(productLink);
-      productItem.appendChild(productName);
-      productItem.appendChild(productPrice);
-      productCollage.appendChild(productItem);
-    });
+    productCollage.append(...productItems);
 
     handleFadeIn(document.querySelectorAll(".product-item"));
   };
 
   const handleFadeIn = (elements) => {
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    if (!elements || elements.length === 0) {
+      console.error("Error: No elements provided for fade-in.");
+      return;
+    }
 
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
+    try {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(({ isIntersecting, target }) => {
+            if (isIntersecting) {
+              target.classList.add("fade-in");
+              observer.unobserve(target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      elements.forEach((element) => {
+        if (element) {
+          observer.observe(element);
+        } else {
+          console.error("Error: A null or undefined element was provided.");
+        }
+      });
+    } catch (error) {
+      console.error("Error initializing IntersectionObserver:", error);
+    }
   };
 
   const filterProducts = () => {
     const selectedCategories = Array.from(
       document.querySelectorAll("#category-list input:checked")
-    ).map((input) => input.dataset.value);
+    ).map((input) => {
+      if (!input || !input.dataset || !input.dataset.value) {
+        console.error(
+          "Error: A category checkbox is missing the 'value' dataset property."
+        );
+        return null;
+      }
 
-    const maxPrice = parseInt(document.getElementById("price-range").value);
-    const sortOption = document.getElementById("sort-by").value;
+      return input.dataset.value;
+    }).filter((value) => !!value);
+
+    const maxPriceInput = document.getElementById("price-range");
+    if (!maxPriceInput) {
+      console.error(
+        "Error: The price range input element is null or undefined."
+      );
+      return;
+    }
+
+    const maxPrice = parseInt(maxPriceInput.value);
+    if (isNaN(maxPrice)) {
+      console.error(
+        "Error: The price range input value is not a valid number."
+      );
+      return;
+    }
+
+    const sortBySelect = document.getElementById("sort-by");
+    if (!sortBySelect) {
+      console.error(
+        "Error: The sort by select element is null or undefined."
+      );
+      return;
+    }
+
+    const sortOption = sortBySelect.value;
 
     let filteredProducts = products;
 
@@ -87,6 +151,11 @@ document.addEventListener("DOMContentLoaded", function () {
       filteredProducts = filteredProducts.sort(
         (a, b) => parseInt(b.price) - parseInt(a.price)
       );
+    }
+
+    if (!filteredProducts || filteredProducts.length === 0) {
+      console.error("Error: No products match the filter criteria.");
+      return;
     }
 
     displayProducts(filteredProducts);
@@ -127,13 +196,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterToggle = document.getElementById("filter-toggle");
   const filterOptions = document.getElementById("filter-options");
 
+  let isFilterVisible = false;
+
   const updateFilterVisibility = () => {
-    if (window.innerWidth >= 768) {
-      filterOptions.classList.add("show");
-      filterToggle.style.display = "none";
-    } else {
-      filterOptions.classList.remove("show");
-      filterToggle.style.display = "block";
+    if (!filterOptions || !filterToggle) return;
+    
+    try {
+      if (window.innerWidth >= 768) {
+        filterOptions.classList.add("show");
+        filterToggle.style.display = "none";
+      } else {
+        filterOptions.classList.remove("show");
+        filterToggle.style.display = "block";
+      }
+    } catch (error) {
+      console.error("Error updating filter visibility:", error);
     }
   };
 
@@ -142,8 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   filterToggle.addEventListener("click", () => {
     if (window.innerWidth < 768) {
-      filterOptions.classList.toggle("show");
-      filterToggle.textContent = filterOptions.classList.contains("show")
+      isFilterVisible = !isFilterVisible;
+      filterOptions.classList.toggle("show", isFilterVisible);
+      filterToggle.textContent = isFilterVisible
         ? "Hide Filters"
         : "Show Filters";
     }
