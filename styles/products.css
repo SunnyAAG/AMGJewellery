@@ -280,17 +280,19 @@ footer {
     grid-template-columns: repeat(1, auto);
   }
 
-  .filter-options {
-    display: none;
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  .filter-options.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
+	.filter-options {
+		max-height: 0;
+		opacity: 0;
+		overflow-y: auto; /* Allow vertical scrolling */
+		transition: max-height 0.4s ease, opacity 0.4s ease;
+		padding: 0 10px;
+	}
+	
+	.filter-options.show {
+		max-height: 300px; /* Set a reasonable max-height for the filter section */
+		opacity: 1;
+	}
+	
 
   .filter-toggle {
     display: block;
