@@ -12,18 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const displayProducts = (productsList) => {
     if (!productCollage) {
-      console.error(
-        "Error: The product collage element is null or undefined."
-      );
+      console.error("Error: The product collage element is null or undefined.");
       return;
     }
 
     const productItems = productsList.map(
       (product) => {
         if (!product || !product.image || !product.link || !product.name || !product.price) {
-          console.error(
-            "Error: A product in the products list has a missing property."
-          );
+          console.error("Error: A product in the products list has a missing property.");
           return null;
         }
 
@@ -96,28 +92,21 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll("#category-list input:checked")
     ).map((input) => {
       if (!input || !input.dataset || !input.dataset.value) {
-        console.error(
-          "Error: A category checkbox is missing the 'value' dataset property."
-        );
+        console.error("Error: A category checkbox is missing the 'value' dataset property.");
         return null;
       }
-
       return input.dataset.value;
     }).filter((value) => !!value);
 
     const maxPriceInput = document.getElementById("price-range");
     if (!maxPriceInput) {
-      console.error(
-        "Error: The price range input element is null or undefined."
-      );
+      console.error("Error: The price range input element is null or undefined.");
       return;
     }
 
     const maxPrice = parseInt(maxPriceInput.value);
     if (isNaN(maxPrice)) {
-      console.error(
-        "Error: The price range input value is not a valid number."
-      );
+      console.error("Error: The price range input value is not a valid number.");
       return;
     }
 
@@ -189,21 +178,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const priceRange = document.getElementById("price-range");
   priceRange.addEventListener("input", () => {
-    document.getElementById(
-      "price-value"
-    ).textContent = `MDL0 - MDL${priceRange.value}`;
+    document.getElementById("price-value").textContent = `MDL0 - MDL${priceRange.value}`;
     filterProducts();
   });
 
   const filterToggle = document.getElementById("filter-toggle");
   const filterOptions = document.getElementById("filter-options");
+  const closeFilterButton = document.getElementById("close-filter-button");
 
   let isFilterVisible = false;
   let isInteractingWithFilter = false; // New variable to track interaction
 
   const updateFilterVisibility = () => {
     if (!filterOptions || !filterToggle) return;
-    
+
     try {
       if (window.innerWidth >= 768) {
         filterOptions.classList.add("show");
@@ -224,10 +212,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth < 768) {
       isFilterVisible = !isFilterVisible;
       filterOptions.classList.toggle("show", isFilterVisible);
-      filterToggle.textContent = isFilterVisible
-        ? "Hide Filters"
-        : "Show Filters";
+      filterToggle.textContent = isFilterVisible ? "Hide Filters" : "Show Filters";
+
+      // Disable product section scrolling when filters are open on mobile
+      document.body.style.overflow = isFilterVisible ? 'hidden' : '';
     }
+  });
+
+  // Add event listener for the close button
+  closeFilterButton.addEventListener("click", () => {
+    filterOptions.classList.remove("show");
+    isFilterVisible = false;
+    filterToggle.textContent = "Show Filters";
+    document.body.style.overflow = ''; // Re-enable product section scrolling
   });
 
   // Listen for touch events to maintain filter visibility

@@ -267,8 +267,21 @@ footer {
   background-color: #333;
   color: white;
 }
+#close-filter-button { display: none;
+	background-color: #5c9cff;
+	color: white; border: none;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	margin: 10px 0;
+}
 
 @media (max-width: 768px) {
+	#close-filter-button { 
+		display: block;
+	}
   .category-grid {
     grid-template-columns: 1fr;
   }
