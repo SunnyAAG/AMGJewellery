@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
     displayProducts(filteredProducts);
   };
 
-  // Initial setup for sorting buttons
   const sortByButtonGroup = document.getElementById("sort-by");
   if (sortByButtonGroup) {
     const sortButtons = sortByButtonGroup.querySelectorAll("button");
@@ -152,7 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initial filtering on page load
   filterProducts();
 
   const categoryAllCheckbox = document.getElementById("category-all");
@@ -187,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeFilterButton = document.getElementById("close-filter-button");
 
   let isFilterVisible = false;
-  let isInteractingWithFilter = false; // New variable to track interaction
+  let isInteractingWithFilter = false;
 
   const updateFilterVisibility = () => {
     if (!filterOptions || !filterToggle) return;
@@ -213,21 +211,17 @@ document.addEventListener("DOMContentLoaded", function () {
       isFilterVisible = !isFilterVisible;
       filterOptions.classList.toggle("show", isFilterVisible);
       filterToggle.textContent = isFilterVisible ? "Hide Filters" : "Show Filters";
-
-      // Disable product section scrolling when filters are open on mobile
       document.body.style.overflow = isFilterVisible ? 'hidden' : '';
     }
   });
 
-  // Add event listener for the close button
   closeFilterButton.addEventListener("click", () => {
     filterOptions.classList.remove("show");
     isFilterVisible = false;
     filterToggle.textContent = "Show Filters";
-    document.body.style.overflow = ''; // Re-enable product section scrolling
+    document.body.style.overflow = '';
   });
 
-  // Listen for touch events to maintain filter visibility
   filterOptions.addEventListener("touchstart", () => {
     isInteractingWithFilter = true;
   });
@@ -236,7 +230,6 @@ document.addEventListener("DOMContentLoaded", function () {
     isInteractingWithFilter = false;
   });
 
-  // Ensure filters don't close when interacting with them
   window.addEventListener("touchmove", (e) => {
     if (isInteractingWithFilter) {
       e.stopPropagation();

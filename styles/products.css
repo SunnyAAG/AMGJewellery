@@ -294,17 +294,19 @@ footer {
   }
 
 	.filter-options {
-		max-height: 0;
+		display: none;
 		opacity: 0;
-		overflow-y: auto; /* Allow vertical scrolling */
-		transition: max-height 0.4s ease, opacity 0.4s ease;
+		transform: translateY(-20px);
+		overflow-y: auto;
 		padding: 0 10px;
-	}
-	
-	.filter-options.show {
-		max-height: 300px; /* Set a reasonable max-height for the filter section */
-		opacity: 1;
-	}
+		} 
+		.filter-options.show {
+			display: block; 
+			opacity: 1; 
+			max-height: 70vh; 
+			transform: translateY(0); 
+			overflow-y: scroll;
+		}
 	
 
   .filter-toggle {
