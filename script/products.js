@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterOptions = document.getElementById("filter-options");
 
   let isFilterVisible = false;
+  let isInteractingWithFilter = false; // New variable to track interaction
 
   const updateFilterVisibility = () => {
     if (!filterOptions || !filterToggle) return;
@@ -228,4 +229,20 @@ document.addEventListener("DOMContentLoaded", function () {
         : "Show Filters";
     }
   });
+
+  // Listen for touch events to maintain filter visibility
+  filterOptions.addEventListener("touchstart", () => {
+    isInteractingWithFilter = true;
+  });
+
+  filterOptions.addEventListener("touchend", () => {
+    isInteractingWithFilter = false;
+  });
+
+  // Ensure filters don't close when interacting with them
+  window.addEventListener("touchmove", (e) => {
+    if (isInteractingWithFilter) {
+      e.stopPropagation();
+    }
+  }, { passive: false });
 });
