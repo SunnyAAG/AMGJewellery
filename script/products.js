@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  const filterProducts = () => {
+  const filterProducts = (sortOption = null) => {
     const selectedCategories = Array.from(
       document.querySelectorAll("#category-list input:checked")
     ).map((input) => {
@@ -120,16 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       return;
     }
-
-    const sortBySelect = document.getElementById("sort-by");
-    if (!sortBySelect) {
-      console.error(
-        "Error: The sort by select element is null or undefined."
-      );
-      return;
-    }
-
-    const sortOption = sortBySelect.value;
 
     let filteredProducts = products;
 
@@ -161,6 +151,21 @@ document.addEventListener("DOMContentLoaded", function () {
     displayProducts(filteredProducts);
   };
 
+  // Initial setup for sorting buttons
+  const sortByButtonGroup = document.getElementById("sort-by");
+  if (sortByButtonGroup) {
+    const sortButtons = sortByButtonGroup.querySelectorAll("button");
+    sortButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const sortOption = button.dataset.sort;
+        filterProducts(sortOption);
+      });
+    });
+  }
+
+  // Initial filtering on page load
+  filterProducts();
+
   const categoryAllCheckbox = document.getElementById("category-all");
   const otherCategoryCheckboxes = document.querySelectorAll(
     "#category-list input:not(#category-all)"
@@ -189,9 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ).textContent = `MDL0 - MDL${priceRange.value}`;
     filterProducts();
   });
-
-  const sortBySelect = document.getElementById("sort-by");
-  sortBySelect.addEventListener("change", filterProducts);
 
   const filterToggle = document.getElementById("filter-toggle");
   const filterOptions = document.getElementById("filter-options");
