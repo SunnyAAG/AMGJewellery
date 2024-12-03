@@ -236,16 +236,16 @@ h1 {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #5c9cff;
+  background: #333;
   cursor: pointer;
-  box-shadow: 0 0 2px #000;
+  box-shadow: 0 0 1px #000;
 }
 
 #price-range::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #5c9cff;
+  background: #333;
   cursor: pointer;
   box-shadow: 0 0 2px #000;
 }
@@ -369,7 +369,7 @@ footer {
 }
 
 .checkbox-circle.checked {
-  background-color: #5c9cff;
+  background-color: #333;
 }
 
 .checkbox-circle:after {
@@ -389,7 +389,6 @@ footer {
   opacity: 1;
 }
 
-/* Updated checkbox styles */
 input[type="checkbox"] {
   display: none;
 }
@@ -419,19 +418,19 @@ label.circle-checkbox::after {
   left: 2px;
   width: 16px;
   height: 16px;
-  border: 2px solid #333;
-  border-radius: 50%;
-  background-color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 100%;
+  background-color: whitesmoke;
   transition: background-color 0.3s ease;
 }
 
 input[type="checkbox"]:checked + label.circle-checkbox::before {
-  background-color: #5c9cff;
-  border-color: #5c9cff;
+  background-color: #333;
+  border-color: #333;
 }
 
 input[type="checkbox"]:checked + label.circle-checkbox::after {
-  background-color: #5c9cff;
+  background-color: #333;
 }
 
 

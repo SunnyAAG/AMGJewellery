@@ -212,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
       filterOptions.classList.toggle("show", isFilterVisible);
       filterToggle.textContent = isFilterVisible ? "Hide Filters" : "Show Filters";
       document.body.style.overflow = isFilterVisible ? 'hidden' : '';
+			//code review here!!!
     }
   });
 
