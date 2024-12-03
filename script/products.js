@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isFilterVisible = !isFilterVisible;
       filterOptions.classList.toggle("show", isFilterVisible);
       filterToggle.textContent = isFilterVisible ? "Hide Filters" : "Show Filters";
-      document.body.style.overflow = isFilterVisible ? 'hidden' : '';
+      document.body.style.overflow = isFilterVisible ? '' : '';
 			//code review here!!!
     }
   });
