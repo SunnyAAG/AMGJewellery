@@ -1,59 +1,76 @@
 {
   "products": [
     {
-      "id": "product1",
+      "id": "product004",
       "name": "Colier cu pandantiv ursuleț",
       "price": "690 MDL",
-      "image": "images/necklaces.png",
+      "image": "images/Produse/Necklaces/004/necklaces.png",
       "category": "Necklaces",
       "link": "products.html#product1",
       "material": "Silver",
       "dateAdded": "2024-01-10",
-      "isPopular": false
+      "isPopular": false,
+			"description": ""
     },
     {
-      "id": "product2",
+      "id": "product003",
       "name": "Cercei hoops placați cu aur",
       "price": "700 MDL",
-      "image": "images/earrings.png",
+      "image": "images/Produse/Earrings/003/earrings.png",
       "category": "Earrings",
       "link": "products.html#product2",
       "material": "Gold",
       "dateAdded": "2024-01-10",
-      "isPopular": true
+      "isPopular": true,
+			"description": ""
     },
     {
-      "id": "product3",
+      "id": "product005",
       "name": "Inel cu piatră naturală",
       "price": "1500 MDL",
-      "image": "images/rings.png",
+      "image": "images/Produse/Rings/005/rings.png",
       "category": "Rings",
       "link": "products.html#product3",
       "material": "Gold",
       "dateAdded": "2024-01-10",
-      "isPopular": true
+      "isPopular": true,
+			"description": ""
     },
     {
-      "id": "product4",
+      "id": "product001",
       "name": "Brățară cu cristale naturale și pandantiv",
       "price": "800 MDL",
-      "image": "images/bracelets.png",
+      "image": "images/Produse/Bracelets/001/bracelets.png",
       "category": "Bracelets",
       "link": "products.html#product4",
       "material": "Silver",
       "dateAdded": "2024-01-10",
-      "isPopular": true
+      "isPopular": true,
+			"description": ""
     },
     {
-      "id": "product5",
+      "id": "product002",
       "name": "Brățară dublă din argint ,cu pandantiv luna",
       "price": "300 MDL",
-      "image": "images/brataradublaargint.png",
+      "image": "images/Produse/Bracelets/002/brataradublaargint.png",
       "category": "Bracelets",
       "link": "products.html#product5",
       "material": "Silver",
       "dateAdded": "2024-01-10",
-      "isPopular": true
+      "isPopular": true,
+			"description": ""
+    },
+		{
+      "id": "product017",
+      "name": "Colier combinație între perle naturale albe și cristale naturale - Acvamarin",
+      "price": "1990 MDL",
+      "image": "images/Produse/Necklaces/017/017Colier.JPG",
+      "category": "Bracelets",
+      "link": "products.html#product17",
+      "material": "Silver",
+      "dateAdded": "2024-01-10",
+      "isPopular": true,
+			"description": ""
     }
   ]
 }
