@@ -43,7 +43,7 @@ a:not(:has(img)):hover::after {
 /* Header Styles */
 header {
   background-color: white;
-  padding: 30px; /* Increased padding for better spacing */
+  padding: 30px;
   text-align: center;
 }
 
@@ -54,11 +54,10 @@ header nav {
 }
 
 h1 {
-  font-family: 'Kaushan Script', sans-serif;
-  font-size: 50px; /* Larger header font */
+  font-size: 50px;
   font-weight: normal;
   text-transform: uppercase;
-  margin-bottom: 30px; /* Increased margin-bottom for spacing */
+  margin-bottom: 30px;
 }
 
 .navigation {
@@ -68,14 +67,14 @@ h1 {
 }
 
 .navigation li {
-  font-size: 22px; /* Slightly larger font */
+  font-size: 22px;
   display: inline;
-  margin-right: 30px; /* Increased margin for spacing */
+  margin-right: 30px;
 }
 
 .navigation a {
-  padding: 12px; /* Increased padding for better clickable area */
-  border-radius: 6px; /* Slightly more rounded borders */
+  padding: 12px;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
@@ -86,23 +85,22 @@ h1 {
 /* Footer Styles */
 footer {
   text-align: center;
-  padding: 25px; /* Slightly more padding */
+  padding: 25px;
   background-color: #333;
   color: white;
 }
 
-/* Product Page Styling */
 .product-page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 40px; /* Increased padding */
+  padding: 40px;
   background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-slideshow {
-  width: 30%; /* Increased width for slideshow */
+  width: 30%;
   position: relative;
   overflow: hidden;
 }
@@ -117,19 +115,19 @@ footer {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: none; /* All images are hidden initially */
+  display: none;
 }
 
 .slideshow-container img:first-child {
-  display: block; /* Only first image is shown initially */
+  display: block;
 }
 
 button {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  font-size: 28px; /* Larger font size */
-  padding: 12px; /* More padding */
+  font-size: 28px;
+  padding: 12px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -150,27 +148,27 @@ button:hover {
 }
 
 .product-details {
-  width: 40%; /* Adjusted width for better proportion */
-  padding: 30px; /* Increased padding for better spacing */
+  width: 40%;
+  padding: 30px;
 }
 
 .product-name {
-  font-size: 32px; /* Increased product name font size */
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px; /* Increased margin */
+  margin-bottom: 20px;
 }
 
 .product-price {
-  font-size: 26px; /* Increased font size */
+  font-size: 26px;
   color: #b12704;
-  margin-bottom: 25px; /* Increased margin */
+  margin-bottom: 25px;
 }
 
 .product-description {
-  font-size: 18px; /* Larger description font */
+  font-size: 18px;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 30px; /* Increased margin */
+  margin-bottom: 30px;
 }
 
 /* Responsive Design */
@@ -178,28 +176,28 @@ button:hover {
   .product-page {
     flex-direction: column;
     align-items: center;
-    padding: 20px; /* Reduced padding for smaller screens */
+    padding: 20px;
   }
 
   .product-slideshow {
-    width: 90%; /* Wider slideshow for small screens */ 
+    width: 65%;
   }
 
   .product-details {
-    width: 90%; /* Adjusted width for mobile screens */
+    width: 70%;
     margin-top: 20px;
   }
 
   .product-name {
-    font-size: 28px; /* Slightly smaller font for mobile */
+    font-size: 28px;
   }
 
   .product-price {
-    font-size: 24px; /* Adjusted font size */
+    font-size: 24px;
   }
 
   .product-description {
-    font-size: 16px; /* Adjusted description font */
+    font-size: 16px;
   }
 }
 
