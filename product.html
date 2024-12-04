@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles/product.css">
-	<script src="script/product.js"></script>
 	<link rel="shortcut icon" href="images/Logo circle.png" type="image/x-icon">
-	<title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+	<title>Product Page - AMG Jewelry</title>
 </head>
 <body>
+	<!-- Header -->
 	<header>
     <nav>
       <h1 id="brand-name">AMG Jewelry</h1>
@@ -19,6 +20,33 @@
       </ul>
     </nav>
   </header>
-	
+
+	<!-- Main Content -->
+	<main>
+		<div class="product-page">
+      <!-- Slideshow -->
+      <div class="product-slideshow">
+        <div class="slideshow-container">
+          <button class="prev" id="prevSlide">❮</button>
+          <div id="slides" class="slides"></div>
+          <button class="next" id="nextSlide">❯</button>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-details">
+        <h1 id="productName" class="product-name"></h1>
+        <p id="productPrice" class="product-price"></p>
+        <p id="productDescription" class="product-description"></p>
+      </div>
+    </div>
+	</main>
+
+	<!-- Footer -->
+	<footer>
+    <p>&copy; 2024 AMG Jewelry. All rights reserved.</p>
+  </footer>
+
+	<script src="script/product.js"></script>
 </body>
 </html>
