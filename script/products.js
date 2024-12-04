@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const productImage = document.createElement("img");
         productImage.src = product.image;
         productImage.alt = product.name;
+				productImage.classList.add("product-image");
 
         const productLink = document.createElement("a");
         productLink.href = product.link;
