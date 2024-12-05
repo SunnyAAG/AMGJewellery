@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
       const productCollage = document.getElementById('productCollage');
-
       const popularProducts = data.products
         .filter(product => product.isPopular)
         .slice(0, 4);
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         productItem.classList.add('product-item');
 
         const productImage = document.createElement('img');
-        productImage.src = product.image;
+        productImage.src = product.images[0];
         productImage.alt = product.name;
         productImage.classList.add('fade-in');
 
