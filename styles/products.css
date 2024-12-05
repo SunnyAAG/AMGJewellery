@@ -95,9 +95,10 @@ h1 {
   object-fit: cover;
 }
 
-#products {
+#popular-products {
   padding: 50px 20px;
   background-color: #f9f9f9;
+	border-radius: 3%;
 }
 
 .product-collage {
@@ -412,11 +413,11 @@ label.circle-checkbox::after {
 
 input[type="checkbox"]:checked + label.circle-checkbox::before {
   background-color: #333;
-  border-color: #333;
+  border-color: #D8C89E;
 }
 
 input[type="checkbox"]:checked + label.circle-checkbox::after {
-  background-color: #333;
+  background-color: #D8C89E;
 }
 
 

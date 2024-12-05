@@ -153,8 +153,9 @@ button:hover {
 }
 
 .product-name {
+	color: #413839;
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 
