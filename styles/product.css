@@ -100,6 +100,7 @@ footer {
 }
 
 .product-slideshow {
+	border-radius: 3%;
   width: 30%;
   position: relative;
   overflow: hidden;
