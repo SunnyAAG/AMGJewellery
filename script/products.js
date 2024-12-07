@@ -195,60 +195,19 @@ document.addEventListener("DOMContentLoaded", function () {
     filterProducts();
   });
 
-  // Filter toggle visibility logic
-  const filterToggle = document.getElementById("filter-toggle");
+  const filterButton = document.getElementById("filter-button");
   const filterOptions = document.getElementById("filter-options");
-  const closeFilterButton = document.getElementById("close-filter-button");
 
-  let isFilterVisible = false;
-  let isInteractingWithFilter = false;
-
-  const updateFilterVisibility = () => {
-    if (!filterOptions || !filterToggle) return;
-
-    try {
-      if (window.innerWidth >= 768) {
-        filterOptions.classList.add("show");
-        filterToggle.style.display = "none";
-      } else {
-        filterOptions.classList.remove("show");
-        filterToggle.style.display = "block";
-      }
-    } catch (error) {
-      console.error("Error updating filter visibility:", error);
-    }
-  };
-
-  window.addEventListener("resize", updateFilterVisibility);
-  updateFilterVisibility();
-
-  filterToggle.addEventListener("click", () => {
-    if (window.innerWidth < 768) {
-      isFilterVisible = !isFilterVisible;
-      filterOptions.classList.toggle("show", isFilterVisible);
-      filterToggle.textContent = isFilterVisible ? "Hide Filters" : "Show Filters";
-      document.body.style.overflow = isFilterVisible ? '' : '';
-    }
+  filterButton.addEventListener("click", () => {
+    filterOptions.classList.toggle("open");
   });
-
-  closeFilterButton.addEventListener("click", () => {
-    filterOptions.classList.remove("show");
-    isFilterVisible = false;
-    filterToggle.textContent = "Show Filters";
-    document.body.style.overflow = '';
-  });
-
-  filterOptions.addEventListener("touchstart", () => {
-    isInteractingWithFilter = true;
-  });
-
-  filterOptions.addEventListener("touchend", () => {
-    isInteractingWithFilter = false;
-  });
-
-  window.addEventListener("touchmove", (e) => {
-    if (isInteractingWithFilter) {
-      e.stopPropagation();
-    }
-  }, { passive: false });
+});
+document.addEventListener("DOMContentLoaded", function () {
+	console.log("DOM fully loaded and parsed");
+	const filterButton = document.getElementById("filter-button");
+	filterButton.addEventListener("click", function (e) {
+			e.preventDefault();
+			console.log("Filter button clicked!");
+			this.querySelector(".filterIcon").classList.toggle("open");
+	});
 });
