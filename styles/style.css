@@ -231,8 +231,8 @@ h1 {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #333;
-  color: #DDDFE5;
+  background-color: #F2F9FF;
+  color: #333;
 }
 
 @media (max-width: 768px) {
