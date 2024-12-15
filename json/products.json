@@ -84,6 +84,25 @@
       "dateAdded": "2024-03-01",
       "isPopular": true,
       "description": "Colier combinație între perle naturale albe și cristale naturale - Acvamarin, și elemente din alamă placate cu aur/rodiu.Lungime colier 42 cm + lanț ajustabil 5-6 cm;Diametru perle 6-7,5 mm;Diametru cristale 6 mm.Disponibilitate 1 pe auriu, 1 pe argintiu."
+    },
+		{
+      "id": "product006",
+      "name": "Lănțișoare cu pandantiv cu tematică de Crăciun",
+      "price": "450 MDL",
+      "images": [
+        "images/Produse/Necklaces/006/006.png",
+				"images/Produse/Necklaces/006/006_1.png",
+				"images/Produse/Necklaces/006/006_2.png",
+				"images/Produse/Necklaces/006/006_3.png",
+				"images/Produse/Necklaces/006/006_4.png",
+				"images/Produse/Necklaces/006/006_5.png"
+      ],
+      "category": "Necklaces",
+      "link": "product.html#product006",
+      "material": "Silver",
+      "dateAdded": "2024-15-12",
+      "isPopular": false,
+      "description": "Lănțișoare cu pandantiv cu tematică de Crăciun 🎅 Alamă placat cu rodiu"
     }
   ]
 }
