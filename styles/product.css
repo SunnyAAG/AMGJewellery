@@ -32,7 +32,7 @@ a:not(:has(img))::after {
   bottom: 0;
   height: 2px;
   width: 0;
-  background-color: #000;
+  background-color: #93B7D1;
   transition: width 0.3s ease;
 }
 
@@ -41,16 +41,18 @@ a:not(:has(img)):hover::after {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: white;
   padding: 10px;
-	padding-top: 20px;
-  text-align: center;
 }
 
 header nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+	align-items: center;
 }
 
 h1 {
@@ -164,7 +166,7 @@ button:hover {
 
 .product-price {
   font-size: 26px;
-  color: #b12704;
+  color: #AE9862;
   margin-bottom: 25px;
 }
 

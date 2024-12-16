@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Apply the initial filters and display products
+	
   filterProducts();
 
   // Category filtering logic
