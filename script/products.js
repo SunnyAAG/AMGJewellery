@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const productItems = productsList.map((product) => {
+    const fragment = document.createDocumentFragment();
+
+    productsList.forEach((product) => {
       if (
         !product || 
         !product.images || 
@@ -29,20 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
         !product.price
       ) {
         console.error("Error: A product in the products list has missing or invalid properties.");
-        return null;
+        return;
       }
 
       const productItem = document.createElement("div");
       productItem.classList.add("product-item");
 
-      const productImage = document.createElement("img");
-      productImage.src = product.images[0]; // Use the first image in the array
-      productImage.alt = product.name;
-      productImage.classList.add("product-image");
-
       const productLink = document.createElement("a");
       productLink.href = product.link;
       productLink.classList.add("product-link");
+
+      const productImage = document.createElement("img");
+      productImage.src = product.images[0];
+      productImage.alt = product.name;
+      productImage.classList.add("product-image");
 
       const productName = document.createElement("p");
       productName.textContent = product.name;
@@ -56,11 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
       productItem.appendChild(productName);
       productItem.appendChild(productPrice);
 
-      return productItem;
-    }).filter((productItem) => !!productItem);
+      fragment.appendChild(productItem);
+    });
 
     productCollage.innerHTML = "";
-    productCollage.append(...productItems);
+    productCollage.appendChild(fragment);
 
     handleFadeIn(document.querySelectorAll(".product-item"));
   };
@@ -163,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-	
+
   filterProducts();
 
   // Category filtering logic

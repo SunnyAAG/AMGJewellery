@@ -23,6 +23,7 @@ a {
   text-decoration: none;
   color: inherit;
   position: relative;
+	text-align: center;
 }
 
 a:not(:has(img))::after {

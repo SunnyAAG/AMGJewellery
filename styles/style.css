@@ -9,7 +9,7 @@ body {
   font-family: 'Kaushan Script', cursive;
   font-size: 40px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-style: normal;
 }
 
@@ -21,6 +21,7 @@ a {
   text-decoration: none;
   color: inherit;
   position: relative;
+	text-align: center;
 }
 
 a:not(:has(img))::after {
@@ -49,7 +50,6 @@ header {
 header nav {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 	align-items: center;
 }
 
@@ -189,7 +189,7 @@ h1 {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-items: center;
   align-items: center;
