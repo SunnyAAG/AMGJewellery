@@ -406,8 +406,46 @@ display: block;
 #filter-options.open{
   display: block;
 }
+@media (max-width: 768px){
+	#filter-button{
+    display: block;
+  }
+	#filter-sidebar{
+		max-width: 100%;
+	}
+	.filter-option{
+		max-width: 100%;
+	}
+	#price-range{
+		max-width: 93%;
+	}
+	#popular-products{
+		padding: 20px;
+	}
+	.product-collage {
+		gap: 20px;
+	}
+	h1{
+		font-size: 20px;
+	}
+	.navigation li {
+		font-size: 18px;
+	}
 
-@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    grid-template-columns: repeat(1, auto);
+  }
+	/* Not sure if it is right for sizes, change if needed */
+}
+
+@media (max-width: 399px) {
   #filter-button{
     display: block;
   }
@@ -426,6 +464,13 @@ display: block;
 	.product-collage {
 		gap: 20px;
 	}
+	h1{
+		font-size: 20px;
+	}
+	.navigation li {
+		font-size: 15px;
+	}
+	/* Not sure if it is right for h1 and navigation li */
 
   .category-grid {
     grid-template-columns: 1fr;
