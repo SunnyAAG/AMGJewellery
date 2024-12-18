@@ -173,6 +173,7 @@ h1 {
 	NEED TO MAKE IT STICKY, LIKE NAVBAR
 	
 	PLEASE */
+	max-width: 250px;
 }
 
 .filter-option {
@@ -181,7 +182,7 @@ h1 {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  max-width: 250px;
   height: auto;
 }
 
@@ -218,6 +219,7 @@ h1 {
   outline: none;
   opacity: 0.7;
   transition: opacity 0.2s;
+	max-width: 220px;
 }
 
 #price-range:hover {
@@ -252,6 +254,7 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: repeat(2, auto);
+	
 }
 
 footer {
@@ -409,6 +412,16 @@ display: block;
   #filter-button{
     display: block;
   }
+	#filter-sidebar{
+		max-width: 100%;
+	}
+	.filter-option{
+		max-width: 100%;
+	}
+	#price-range{
+		max-width: 93%;
+	}
+	
 
   .category-grid {
     grid-template-columns: 1fr;

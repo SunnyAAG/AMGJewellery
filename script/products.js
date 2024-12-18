@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
+
   const productCollage = document.getElementById("productCollage");
+  const filterButton = document.getElementById("filter-button");
+  const filterOptions = document.getElementById("filter-options");
+  const priceRange = document.getElementById("price-range");
+  const categoryAllCheckbox = document.getElementById("category-all");
+  const otherCategoryCheckboxes = document.querySelectorAll(
+    "#category-list input:not(#category-all)"
+  );
+  const sortByButtonGroup = document.getElementById("sort-by");
+  const priceValueDisplay = document.getElementById("price-value");
   let products = [];
 
   // Fetching data from the products JSON file
@@ -8,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       products = data.products;
       displayProducts(products);
+      initializeCategoryFilter();
     })
     .catch((error) => console.error("Error loading data:", error));
 
@@ -22,15 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     productsList.forEach((product) => {
       if (
-        !product || 
-        !product.images || 
-        !Array.isArray(product.images) || 
-        product.images.length === 0 || 
-        !product.link || 
-        !product.name || 
+        !product ||
+        !product.images ||
+        !Array.isArray(product.images) ||
+        product.images.length === 0 ||
+        !product.link ||
+        !product.name ||
         !product.price
       ) {
-        console.error("Error: A product in the products list has missing or invalid properties.");
+        console.error(
+          "Error: A product in the products list has missing or invalid properties."
+        );
         return;
       }
 
@@ -103,21 +117,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterProducts = (sortOption = null) => {
     const selectedCategories = Array.from(
       document.querySelectorAll("#category-list input:checked")
-    ).map((input) => {
-      if (!input || !input.dataset || !input.dataset.value) {
-        console.error("Error: A category checkbox is missing the 'value' dataset property.");
-        return null;
-      }
-      return input.dataset.value;
-    }).filter((value) => !!value);
+    )
+      .map((input) => input.dataset.value)
+      .filter((value) => value);
 
-    const maxPriceInput = document.getElementById("price-range");
-    if (!maxPriceInput) {
+    if (!priceRange) {
       console.error("Error: The price range input element is null or undefined.");
       return;
     }
 
-    const maxPrice = parseInt(maxPriceInput.value);
+    const maxPrice = parseInt(priceRange.value);
     if (isNaN(maxPrice)) {
       console.error("Error: The price range input value is not a valid number.");
       return;
@@ -145,16 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
 
-    if (!filteredProducts || filteredProducts.length === 0) {
-      console.error("Error: No products match the filter criteria.");
-      return;
-    }
-
     displayProducts(filteredProducts);
   };
 
-  // Event listeners for sorting buttons
-  const sortByButtonGroup = document.getElementById("sort-by");
+  // Sorting buttons logic
   if (sortByButtonGroup) {
     const sortButtons = sortByButtonGroup.querySelectorAll("button");
     sortButtons.forEach((button) => {
@@ -165,51 +168,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
-  filterProducts();
+  // Filter button logic
+  if (filterButton) {
+    filterButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("Filter button clicked!");
+      filterOptions.classList.toggle("open");
+      this.querySelector(".filterIcon").classList.toggle("open");
+    });
+  }
 
   // Category filtering logic
-  const categoryAllCheckbox = document.getElementById("category-all");
-  const otherCategoryCheckboxes = document.querySelectorAll(
-    "#category-list input:not(#category-all)"
-  );
-
-  categoryAllCheckbox.addEventListener("change", () => {
-    if (categoryAllCheckbox.checked) {
-      otherCategoryCheckboxes.forEach((checkbox) => (checkbox.checked = false));
-    }
-    filterProducts();
-  });
-
-  otherCategoryCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        categoryAllCheckbox.checked = false;
+  if (categoryAllCheckbox) {
+    categoryAllCheckbox.addEventListener("change", () => {
+      if (categoryAllCheckbox.checked) {
+        otherCategoryCheckboxes.forEach((checkbox) => (checkbox.checked = false));
       }
       filterProducts();
     });
-  });
+
+    otherCategoryCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          categoryAllCheckbox.checked = false;
+        }
+        filterProducts();
+      });
+    });
+  }
 
   // Price range filtering logic
-  const priceRange = document.getElementById("price-range");
-  priceRange.addEventListener("input", () => {
-    document.getElementById("price-value").textContent = `MDL0 - MDL${priceRange.value}`;
-    filterProducts();
-  });
+  if (priceRange && priceValueDisplay) {
+    priceRange.addEventListener("input", () => {
+      priceValueDisplay.textContent = `MDL0 - MDL${priceRange.value}`;
+      filterProducts();
+    });
+  }
 
-  const filterButton = document.getElementById("filter-button");
-  const filterOptions = document.getElementById("filter-options");
+  // Function to initialize the category filter based on URL parameter
+  const initializeCategoryFilter = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromURL = urlParams.get("category");
 
-  filterButton.addEventListener("click", () => {
-    filterOptions.classList.toggle("open");
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
-	console.log("DOM fully loaded and parsed");
-	const filterButton = document.getElementById("filter-button");
-	filterButton.addEventListener("click", function (e) {
-			e.preventDefault();
-			console.log("Filter button clicked!");
-			this.querySelector(".filterIcon").classList.toggle("open");
-	});
+    if (categoryFromURL) {
+      const checkbox = document.querySelector(
+        `#category-list input[data-value='${categoryFromURL}']`
+      );
+
+      if (checkbox) {
+        checkbox.checked = true;
+      }
+
+      filterProducts();
+    }
+  };
+
+  filterProducts();
 });
