@@ -5,12 +5,9 @@ body {
   color: #333;
 }
 
-#brand-name {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 40px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  font-style: normal;
+.brand-logo{
+	max-width: 150px;
+	height: auto;
 }
 
 
@@ -258,12 +255,88 @@ h1 {
   grid-template-columns: repeat(2, auto);
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+#site-footer {
   background-color: white;
+  padding: 40px 20px;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px; /* Increased gap for better spacing between sections */
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footer-links, .footer-navigation, .footer-categories {
+  font-size: 14px;
+}
+
+.footer-links h2,
+.footer-navigation h2,
+.footer-categories h2 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-links p,
+.footer-navigation ul li,
+.footer-categories ul li {
+  margin: 5px 0;
+}
+
+.footer-links a,
+.footer-navigation a,
+.footer-categories a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.footer-links a::after,
+.footer-navigation a::after,
+.footer-categories a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after,
+.footer-navigation a:hover::after,
+.footer-categories a:hover::after {
+  width: 100%;
+}
+
+.footer-navigation ul,
+.footer-categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-navigation ul li,
+.footer-categories ul li {
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+}
+
 
 #filter-button{
   text-decoration: none;
@@ -443,6 +516,14 @@ display: block;
 
   .container {
     grid-template-columns: repeat(1, auto);
+  }
+	.brand-logo{
+		width: 100px;
+		height: auto;
+	}
+	.footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px; /* Adjusted for compactness on smaller screens */
   }
 	/* Not sure if it is right for sizes, change if needed */
 }
