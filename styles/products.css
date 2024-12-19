@@ -67,12 +67,14 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
+	text-align: center;
+	justify-content: center;
 }
 
 .navigation li {
   font-size: 18px;
   display: inline;
-  margin-right: 20px;
+	padding: 10px;
 }
 
 .navigation a {
@@ -469,6 +471,9 @@ display: block;
 	}
 	.navigation li {
 		font-size: 15px;
+	}
+	#brand-name{
+		font-size: 30px;
 	}
 	/* Not sure if it is right for h1 and navigation li */
 

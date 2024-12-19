@@ -9,7 +9,7 @@ body {
   font-family: 'Kaushan Script', cursive;
   font-size: 40px;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-style: normal;
 }
 
@@ -65,12 +65,14 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
+	text-align: center;
+	justify-content: center;
 }
 
 .navigation li {
   font-size: 18px;
   display: inline;
-  margin-right: 20px;
+	padding: 10px;
 }
 
 .navigation a {
@@ -242,4 +244,26 @@ footer {
   .category-grid {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 768px){
+	h1{
+		font-size: 20px;
+	}
+	.navigation li {
+		font-size: 18px;
+	}
+
+	/* Not sure if it is right for sizes, change if needed */
+}
+@media (max-width: 399px) {
+	h1{
+		font-size: 20px;
+	}
+	.navigation li {
+		font-size: 15px;
+	}
+	#brand-name{
+		font-size: 30px;
+	}
+	/* Not sure if it is right for h1 and navigation li */
 }
