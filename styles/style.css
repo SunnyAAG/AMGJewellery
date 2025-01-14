@@ -6,7 +6,7 @@ body {
 }
 
 .brand-logo{
-	max-width: 150px;
+	max-width: 100px;
 	height: auto;
 }
 
@@ -93,7 +93,7 @@ h1 {
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 750px;
+  max-height: 720px;
   object-fit: cover;
 }
 
