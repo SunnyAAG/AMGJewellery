@@ -171,6 +171,7 @@ h1 {
 
 .plan__image {
   position: relative;
+	padding: 40px;
 }
 
 .plan__image img {
@@ -188,13 +189,13 @@ h1 {
 }
 
 .plan__image img:nth-child(2) {
-  max-width: 260px;
+  max-width: 390px;
   transform: translate(-50%, calc(-50% - 5rem));
   z-index: 2;
 }
 
 .plan__image img:nth-child(3) {
-  max-width: 270px;
+  max-width: 310px;
   transform: translate(calc(-50% + 9rem), calc(-50% + 5rem));
 }
 
@@ -426,23 +427,24 @@ h1 {
 
   .plan__image {
     min-height: 300px;
+		min-width: 350px;
     grid-area: 1/1/2/2;
   }
 	.plan__image img:nth-child(1) {
-		max-width: 170px;
-		transform: translate(calc(-50% - 7rem), calc(-50% + 3rem));
+		max-width: 200px;
+		transform: translate(calc(-50% - 9rem), calc(-50% + 1rem));
 		z-index: 3;
 	}
 	
 	.plan__image img:nth-child(2) {
-		max-width: 190px;
-		transform: translate(-50%, calc(-50% - 2rem));
+		max-width: 240px;
+		transform: translate(-50%, calc(-50% - 6rem));
 		z-index: 2;
 	}
 	
 	.plan__image img:nth-child(3) {
-		max-width: 210px;
-		transform: translate(calc(-50% + 4rem), calc(-50% + 5rem));
+		max-width: 260px;
+		transform: translate(calc(-50% + 5rem), calc(-50% + 3rem));
 	}
 	
 
