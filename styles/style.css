@@ -401,6 +401,12 @@ h1 {
   color: #555;
 }
 @media (max-width: 768px){
+	.hero-image {
+		width: 50%;
+		height: auto;
+		max-height: 720px;
+		object-fit: cover;
+	}
 	h1{
 		font-size: 20px;
 	}
