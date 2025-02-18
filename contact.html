@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles/contact.css">
+  <link href="fonts/KushanScript.ttf" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="images/Logo AMG.svg" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="images/Logo AMG.svg" class="brand-logo">
+      <ul class="navigation">
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="products.html">Produse</a></li>
+        <li><a href="aboutus.html">Despre noi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Contactați</span></div>
+      <form method="post" action="" name="contact-form">
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <input type="text" name="your-name" minlength="1" maxlength="20" placeholder="Nume" required>
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="tel" name="your-number" minlength="1" maxlength="11" placeholder="(+373)" required>
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="text" name="message" minlength="1" placeholder="Mesaj">
+        </div>
+        <div class="row button">
+          <input type="submit" value="Trimite" id="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <section class="section__container travellers__container">
+	<h2 class="section__header">Cei mai buni călători ai lunii</h2>
+	<div class="travellers__grid">
+	  <div class="travellers__card">
+		<img src="images/Logo AMG.svg" alt="traveller" />
+		<div class="travellers__card__content">
+		  <img src="images/Logo AMG.svg" alt="client" />
+		  <h4>Emily Johnson</h4>
+		  <p>Dubai</p>
+		</div>
+	  </div>
+	  <div class="travellers__card">
+		<img src="images/Logo AMG.svg" alt="traveller" />
+		<div class="travellers__card__content">
+		  <img src="images/Logo AMG.svg" alt="client" />
+		  <h4>David Smith</h4>
+		  <p>Paris</p>
+		</div>
+	  </div>
+	  <div class="travellers__card">
+		<img src="images/Logo AMG.svg" alt="traveller" />
+		<div class="travellers__card__content">
+		  <img src="images/Logo AMG.svg" alt="client" />
+		  <h4>Olivia Brown</h4>
+		  <p>Singapore</p>
+		</div>
+	  </div>
+	  <div class="travellers__card">
+		<img src="images/Logo AMG.svg" alt="traveller" />
+		<div class="travellers__card__content">
+		  <img src="images/Logo AMG.svg" alt="client" />
+		  <h4>Daniel Taylor</h4>
+		  <p>Malaysia</p>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+  <footer id="site-footer">
+		<div class="footer-content">
+			<div class="footer-links">
+				<h2>Contacte</h2>
+				<p>Email: <a href="mailto:info@amgjewelry.com">info@amgjewelry.com</a></p>
+				<p>Telefon: <a href="tel:+37378643900">+373 78643900</a></p>
+				<p>Adresă: str. Al. Sciusev 78, Chisinau, Moldova</p>
+				<p>
+					Instagram: 
+					<a href="https://www.instagram.com/amgjewelry" target="_blank">
+						@amgjewelry
+					</a>
+				</p>
+			</div>
+			<div class="footer-navigation">
+				<h2>Quick Links</h2>
+				<nav>
+					<ul>
+						<li><a href="index.html">Acasă</a></li>
+						<li><a href="products.html">Produse</a></li>
+						<li><a href="aboutus.html">Despre noi</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="footer-categories">
+				<h2>Categorii</h2>
+				<ul>
+					<li><a href="products.html?category=Necklaces">Coliere</a></li>
+					<li><a href="products.html?category=Earrings">Cercei</a></li>
+					<li><a href="products.html?category=Rings">Inele</a></li>
+					<li><a href="products.html?category=Bracelets">Brățări</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>&copy; 2024 AMG Jewelry. All rights reserved.</p>
+		</div>
+	</footer>
+
+  <script src="script/contact.js"></script>
+</body>
+</html>

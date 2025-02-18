@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', sans-serif;
+}
 body {
   font-family: 'Comfortaa', sans-serif;
   margin: 0;
@@ -20,7 +26,7 @@ a {
   position: relative;
 	text-align: center;
 }
-
+/* 
 a:not(:has(img))::after {
   content: "";
   position: absolute;
@@ -30,7 +36,7 @@ a:not(:has(img))::after {
   width: 0;
   background-color: #93B7D1;
   transition: width 0.3s ease;
-}
+} */
 
 a:not(:has(img)):hover::after {
   width: 100%;
@@ -81,6 +87,7 @@ h1 {
 .navigation a:hover {
   background-color: #f2f2f2;
 }
+
 
 /* Footer Styles */
 #site-footer {
@@ -167,14 +174,14 @@ h1 {
 
 .product-page {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding: 40px;
   background-color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-slideshow {
+  margin-right: 100px;
 	border-radius: 3%;
   width: 30%;
   position: relative;
@@ -199,7 +206,7 @@ h1 {
   display: block;
 }
 
-button {
+.prev, .next {
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
@@ -225,6 +232,7 @@ button:hover {
 }
 
 .product-details {
+  text-align: center;
   width: 40%;
   padding: 30px;
 }
@@ -249,6 +257,137 @@ button:hover {
   margin-bottom: 30px;
 }
 
+.purchase-details{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.purchase-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.purchase{
+  width: 200px;
+  height: 50px;
+  background-color: #63636339;
+  line-height: 50px;
+  border-radius: 10px;
+}
+
+.purchase-details button{
+  margin: 0px 0px 0px 10px;
+  background-color: #5e5e5e37;
+  border: none;
+  width: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.purchase-details #product-quantity{
+  margin-left: 10px;
+  padding: 10px;
+  border: solid black 1px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 10px;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 243, 243, 0.919);
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.modal-details {
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-info {
+  text-align: center;
+  display: grid;
+}
+
+.modal img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  cursor: pointer;
+  color: black;
+}
+
+#confirmPurchase, #cancelPurchase {
+  background-color: #93B7D1;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #7598af;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+input[type="number"] {
+  width: 100%;
+  border: none;
+  background-color: #33333300;
+  text-align: center;
+}
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .product-page {
@@ -259,6 +398,7 @@ button:hover {
 
   .product-slideshow {
     width: 65%;
+    margin-right: 0px;
   }
 
   .product-details {
@@ -291,10 +431,11 @@ button:hover {
 	.navigation li {
 		font-size: 18px;
 	}
-	/* Not sure if it is right for sizes, change if needed */
+  .modal-details {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-/* Fade-In Animation for Slideshow */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -317,5 +458,26 @@ button:hover {
 	#brand-name{
 		font-size: 30px;
 	}
-	/* Not sure if it is right for h1 and navigation li */
+}
+
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #93B7D1; 
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #80a1b9; 
 }

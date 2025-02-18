@@ -9,6 +9,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Kaushan+Script&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 	<title>Product Page - AMG Jewelry</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
 
 	<!-- Main Content -->
 	<main>
-		<div class="product-page">
+	<div class="product-page">
       <!-- Slideshow -->
       <div class="product-slideshow">
         <div class="slideshow-container">
@@ -40,9 +41,41 @@
       <div class="product-details">
         <h1 id="productName" class="product-name"></h1>
         <p id="productPrice" class="product-price"></p>
+		<div class="purchase-details">
+			<a href="#" class="purchase">Cumpără</a>
+			<div class="purchase-container">
+				<label id="product-quantity">1</label>
+				<button id="quantity-0">+</button>
+				<button id="quantity-1">-</button>
+			</div>
+		</div>
         <p id="productDescription" class="product-description"></p>
       </div>
     </div>
+	<div id="purchaseModal" class="modal">
+		<div class="modal-content">
+		  <span class="close-btn">&times;</span>
+		  <div class="modal-details">
+			<img id="modalProductImage" src="" alt="Product Image">
+			<div class="modal-info">
+			  <h2 id="modalProductTitle"></h2>
+			  <p id="modalProductPrice"></p>
+			
+			  <label for="modalQuantity">Cantitate:</label>
+			  <input type="number" id="modalQuantity" value="1" min="1" disabled>
+			
+			  <label for="modalPhone">Telefon:</label>
+			  <input type="tel" id="modalPhone" placeholder="Ex: +373 78643900" required>
+			
+			  <div class="modal-buttons">
+				<button id="confirmPurchase">Confirmă</button>
+				<button id="cancelPurchase">Anulează</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+  
 	</main>
 
 	<!-- Footer -->
@@ -84,6 +117,9 @@
 			<p>&copy; 2024 AMG Jewelry. All rights reserved.</p>
 		</div>
 	</footer>
+	<a href="contact.html" class="contact-button" title="Contact Us">
+        <i class="fas fa-phone"></i>
+    </a>
 
 	<script src="script/product.js"></script>
 </body>
